@@ -17,7 +17,6 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -30,43 +29,36 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         //String Array to store words -> english
-       ArrayList<String> words=new ArrayList<>();
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
-
-        //Logs
-      //  Log.v("NumbersActivity","Words At index 6 "+words.get(5));
-       // Log.v("NumbersActivity","Words At index 0 "+words.get(0));
-         //
-
-        // LinearLayout rootView=(LinearLayout)findViewById(R.id.rootview);
+        /** WHat we r doing here is passing two args in construtor of Words class
+         * @param 1st arg in Words is English word
+         *
+         * @param 2st arg in Words is miwok wors
+         */
+        ArrayList<Words> words = new ArrayList<Words>();
+        words.add(new Words("One", "Lutti"));
+        words.add(new Words("Two", "otiiko"));
+        words.add(new Words("Three", "tolookosu"));
+        words.add(new Words("Four", "oyyisa"));
+        words.add(new Words("Five", "massokka"));
+        words.add(new Words("Six", "temmokka"));
+        words.add(new Words("Seven", "kenekaku"));
+        words.add(new Words("Eight", "kawinta"));
+        words.add(new Words("Nine", "wo’e"));
+        words.add(new Words("Ten", "na’aacha"));
 
 
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
+        WordsAdapter itemAdapter = new WordsAdapter(this, words);
 
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list_view);
+
+
 
         listView.setAdapter(itemAdapter);
 
 
+    }
 
-
-
-
-
-
-
-
-
-
+    private class Word {
     }
 }
