@@ -15,8 +15,12 @@
  */
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,5 +28,50 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        //String Array to store words -> english
+       ArrayList<String> words=new ArrayList<>();
+        words.add("One");
+        words.add("Two");
+        words.add("Three");
+        words.add("Four");
+        words.add("Five");
+        words.add("Six");
+        words.add("Seven");
+        words.add("Eight");
+        words.add("Nine");
+        words.add("Ten");
+
+        //Logs
+      //  Log.v("NumbersActivity","Words At index 6 "+words.get(5));
+       // Log.v("NumbersActivity","Words At index 0 "+words.get(0));
+         //
+
+        LinearLayout rootView=(LinearLayout)findViewById(R.id.rootview);
+
+      // for loop for updating list in rootview
+        for (int i=0;  i <  words.size() ; i++)
+            //Log.v("NumbersActivity","Index: "+index+ " Value: "+ words.get(index));
+           {
+               TextView wordsview = new TextView(this);
+               wordsview.setText(words.get(i));
+               rootView.addView(wordsview);
+               // TODO: 08-07-2017  Video no: 45 view it
+           }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
