@@ -17,8 +17,8 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -47,20 +47,15 @@ public class NumbersActivity extends AppCompatActivity {
        // Log.v("NumbersActivity","Words At index 0 "+words.get(0));
          //
 
-        LinearLayout rootView=(LinearLayout)findViewById(R.id.rootview);
-
-      // for loop for updating list in rootview
-        for (int i=0;  i <  words.size() ; i++)
-            //Log.v("NumbersActivity","Index: "+index+ " Value: "+ words.get(index));
-           {
-               TextView wordsview = new TextView(this);
-               wordsview.setText(words.get(i));
-               rootView.addView(wordsview);
-               // TODO: 08-07-2017  Video no: 45 view it
-           }
+        // LinearLayout rootView=(LinearLayout)findViewById(R.id.rootview);
 
 
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
 
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(itemAdapter);
 
 
 
