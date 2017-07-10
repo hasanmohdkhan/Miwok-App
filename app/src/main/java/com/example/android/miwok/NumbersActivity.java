@@ -59,6 +59,5 @@ public class NumbersActivity extends AppCompatActivity {
 
     }
 
-    private class Word {
-    }
+
 }
