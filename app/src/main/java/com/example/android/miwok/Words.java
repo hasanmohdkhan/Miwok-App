@@ -8,28 +8,66 @@ package com.example.android.miwok;
  */
 
 public class Words {
+    private static final int NO_IMAGE_IS_PROVIDED = -1;
     /*
     * private variables to protect class
     * from outside access
     *
     * */
     private String mMiwokWord;
+
+    //variable i.e CONSTANT so we will able to check the that actvity having image or not
+    // -1 here it make sure that no resources id matach to it
+    // so we used -1 here :-)
+
+
+    //setting imageresorceid as constant
+    /* We are starting imageresource is in NO Image resourves as defalult
+     * As it have one then image --> mImageResourceID = R.drawbale.color_one
+     * */
     private String mEnglishWord;
+    private int mImageResourceID = NO_IMAGE_IS_PROVIDED;
+
 
     /*Construtor here with two argruments
-    * */
+    *
+    *  vMiwokWord for miwok word
+    *   vEnglishWord for english word
+    *   For phrase layout which not having image in them
+    *
+    *   */
 
-    /**
-     * @param vMiwokWord   args for miwok word
-     * @param vEnglishWord args for miwok English
-     */
-    public Words(String vEnglishWord, String vMiwokWord) {
-        mEnglishWord = vEnglishWord;
-        mMiwokWord = vMiwokWord;
 
+    public Words(String mMiwokWord, String mEnglishWord) {
+        this.mMiwokWord = mMiwokWord;
+        this.mEnglishWord = mEnglishWord;
     }
 
-    //
+
+
+
+
+
+
+
+
+
+
+    /*Construtor here with three argruments
+    *   vMiwokWord for miwok word
+    *   vEnglishWord for english word
+    *   vImageResource for image resource
+    *
+    * */
+
+    public Words(String mMiwokWord, String mEnglishWord, int mImageResourceID) {
+        this.mMiwokWord = mMiwokWord;
+        this.mEnglishWord = mEnglishWord;
+        this.mImageResourceID = mImageResourceID;
+    }
+
+
+    //getter method declare public
     public String getmMiwokWord() {
         return mMiwokWord;
     }
@@ -37,4 +75,27 @@ public class Words {
     public String getmEnglishWord() {
         return mEnglishWord;
     }
+
+    public int getmImageResourceID() {
+        return mImageResourceID;
+    }
+
+    /* Here is the method that return true or false
+    *  if image is present then true or if not then false
+    *
+    * We later use this value in WordsAdapter to check
+    * that image is present or not
+    *
+    *
+    * */
+
+
+    public boolean hasImage() {
+        return mImageResourceID != NO_IMAGE_IS_PROVIDED;
+
+
+    }
+
+
+
 }

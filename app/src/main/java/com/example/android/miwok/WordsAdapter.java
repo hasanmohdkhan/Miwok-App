@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -54,6 +55,31 @@ public class WordsAdapter extends ArrayAdapter<Words> {
         //setting english words to textview via method getMenglish
         //
         mEnglishCurrent.setText(currentWords.getmEnglishWord());
+
+        //Init... Image View in List
+        ImageView mIcon = (ImageView) listItemView.findViewById(R.id.icon_view);
+
+        /* Logic to check if herei s image or not
+        * And set image visibility according to that
+        *
+        * */
+        if (currentWords.hasImage()) {
+            // Getting image from list vai construtor method getimageresoureId
+            mIcon.setImageResource(currentWords.getmImageResourceID());
+            mIcon.setVisibility(View.VISIBLE);
+        } else {
+            // There is no image so we remove iamge view
+            mIcon.setVisibility(View.GONE);
+        }
+
+
+
+
+
+
+
+
+
 
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
