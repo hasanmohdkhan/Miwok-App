@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:background="@color/tan_background"
+    android:minHeight="@dimen/list_item_height"
+    android:orientation="horizontal">
 
     <!-- image view-->
 
 
     <ImageView
         android:id="@+id/icon_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher" />
-
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height"
+        android:src="@drawable/family_father" />
 
     <!-- L inear Layout With Vertical  -->
 
@@ -25,71 +25,34 @@
         android:orientation="vertical"
         android:paddingLeft="16dp"
 
+
         >
 
 
         <TextView
-
         android:id="@+id/miwok_words"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
-        tools:text="Lutti" />
+            android:gravity="bottom"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            tools:text="Lutti"
 
-    <TextView
+            />
+
+        <TextView
         android:id="@+id/englis_words"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_height="0dp"
         android:layout_weight="1"
+            android:gravity="top"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
         tools:text="One" />
 
 
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

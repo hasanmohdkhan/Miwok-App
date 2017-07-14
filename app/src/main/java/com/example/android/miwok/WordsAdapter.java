@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,16 @@ import java.util.ArrayList;
 
 public class WordsAdapter extends ArrayAdapter<Words> {
 
+    //variable for color to change color dynamically
+    //
+    private int mColorResourceID;
+
     //construtor
-    public WordsAdapter(Activity context, ArrayList<Words> words) {
+    public WordsAdapter(Activity context, ArrayList<Words> words, int colorResourceId) {
+
         super(context, 0, words);
+
+        mColorResourceID = colorResourceId;
     }
     //Words currentWords=getItem(position);
 
@@ -49,6 +57,24 @@ public class WordsAdapter extends ArrayAdapter<Words> {
         //setting wimok words to textview via getmMiwokWord
         //
         mWimok.setText(currentWords.getmMiwokWord());
+
+        /*
+        *
+        * Setting color of text_container
+        *  1-find view with help of listview
+        *  setting color to each passing activity
+        * */
+
+        View textContainer = listItemView.findViewById(R.id.text_container);
+
+        //  Find the color that the resource ID  map it
+        int color = ContextCompat.getColor(getContext(), mColorResourceID);
+
+        //setting color we get to background in text_container
+        textContainer.setBackgroundColor(color);
+
+
+
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView mEnglishCurrent = (TextView) listItemView.findViewById(R.id.englis_words);

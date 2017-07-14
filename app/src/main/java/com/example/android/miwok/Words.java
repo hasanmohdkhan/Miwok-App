@@ -8,6 +8,7 @@ package com.example.android.miwok;
  */
 
 public class Words {
+
     private static final int NO_IMAGE_IS_PROVIDED = -1;
     /*
     * private variables to protect class
@@ -28,19 +29,22 @@ public class Words {
     private String mEnglishWord;
     private int mImageResourceID = NO_IMAGE_IS_PROVIDED;
 
+    private int mResourceAduioID;
+
 
     /*Construtor here with two argruments
     *
     *  vMiwokWord for miwok word
     *   vEnglishWord for english word
     *   For phrase layout which not having image in them
-    *
+    *  ResourceAduioID for audio resources
     *   */
 
 
-    public Words(String mMiwokWord, String mEnglishWord) {
+    public Words(String mMiwokWord, String mEnglishWord, int ResourceAduioID) {
         this.mMiwokWord = mMiwokWord;
         this.mEnglishWord = mEnglishWord;
+        this.mResourceAduioID = ResourceAduioID;
     }
 
 
@@ -57,13 +61,16 @@ public class Words {
     *   vMiwokWord for miwok word
     *   vEnglishWord for english word
     *   vImageResource for image resource
+    *  ResourceAduioID for audio resources
     *
-    * */
+    *   */
 
-    public Words(String mMiwokWord, String mEnglishWord, int mImageResourceID) {
+
+    public Words(String mMiwokWord, String mEnglishWord, int mImageResourceID, int ResourceAduioID) {
         this.mMiwokWord = mMiwokWord;
         this.mEnglishWord = mEnglishWord;
         this.mImageResourceID = mImageResourceID;
+        this.mResourceAduioID = ResourceAduioID;
     }
 
 
@@ -80,11 +87,16 @@ public class Words {
         return mImageResourceID;
     }
 
-    /* Here is the method that return true or false
+    public int getmResourceAduioID() {
+        return mResourceAduioID;
+    }
+
+   /* Here is the method that return true or false
     *  if image is present then true or if not then false
     *
     * We later use this value in WordsAdapter to check
     * that image is present or not
+    *
     *
     *
     * */
@@ -95,7 +107,6 @@ public class Words {
 
 
     }
-
 
 
 }
