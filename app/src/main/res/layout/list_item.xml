@@ -30,8 +30,8 @@
 
 
         <TextView
-        android:id="@+id/miwok_words"
-        android:layout_width="match_parent"
+            android:id="@+id/miwok_words"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="bottom"
@@ -43,14 +43,14 @@
             />
 
         <TextView
-        android:id="@+id/englis_words"
-        android:layout_width="match_parent"
+            android:id="@+id/englis_words"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-        android:layout_weight="1"
+            android:layout_weight="1"
             android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-        tools:text="One" />
+            tools:text="One" />
 
 
     </LinearLayout>
